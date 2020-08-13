@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.LocaleList;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         settings.setAllowUniversalAccessFromFileURLs(false);
         settings.setBlockNetworkImage(true);
         settings.setSafeBrowsingEnabled(true);
+
+        System.out.println("User locales: " + LocaleList.getDefault());
 
         setContentView(view);
         view.loadUrl(SPELL_CHECK_URL + "register");
